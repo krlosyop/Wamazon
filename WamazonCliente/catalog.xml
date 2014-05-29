@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/WamazonServer/ManejoSesionService?wsdl" uri="src/conf/xml-resources/web-service-references/ManejoSesionService/wsdl/localhost_8080/WamazonServer/ManejoSesionService.wsdl"/>
+    <system systemId="http://localhost:8080/WamazonServer/ManejoSesionService?xsd=1" uri="src/conf/xml-resources/web-service-references/ManejoSesionService/wsdl/localhost_8080/WamazonServer/ManejoSesionService.xsd_1.xsd"/>
+</catalog>
