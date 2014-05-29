@@ -7,6 +7,9 @@
     <service name="UsuarioNegocio">
       <implementation-class>negocio.UsuarioNegocio</implementation-class>
     </service>
+    <service name="ProductoNegocio">
+      <implementation-class>negocio.ProductoNegocio</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

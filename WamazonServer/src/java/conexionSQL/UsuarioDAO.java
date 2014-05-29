@@ -101,7 +101,7 @@ public class UsuarioDAO
             {
                 objUsuario = new Usuario();
                 objUsuario.setUsuario(usuario);
-                objUsuario.setNombre(rs.getString("bn_usuario"));
+                objUsuario.setNombre(rs.getString("nb_usuario"));
                 objUsuario.setApellidoPaterno(rs.getString("tx_apa"));
                 objUsuario.setApellidoMaterno(rs.getString("tx_apb"));
             }

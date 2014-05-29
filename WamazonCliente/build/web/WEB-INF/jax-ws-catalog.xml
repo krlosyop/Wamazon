@@ -4,4 +4,6 @@
     <system systemId="http://localhost:8080/WamazonServer/ManejoSesionService?xsd=1" uri="wsdl/localhost_8080/WamazonServer/ManejoSesionService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/WamazonServer/UsuarioNegocioService?wsdl" uri="wsdl/localhost_8080/WamazonServer/UsuarioNegocioService.wsdl"/>
     <system systemId="http://localhost:8080/WamazonServer/UsuarioNegocioService?xsd=1" uri="wsdl/localhost_8080/WamazonServer/UsuarioNegocioService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WamazonServer/ProductoNegocioService?wsdl" uri="wsdl/localhost_8080/WamazonServer/ProductoNegocioService.wsdl"/>
+    <system systemId="http://localhost:8080/WamazonServer/ProductoNegocioService?xsd=1" uri="wsdl/localhost_8080/WamazonServer/ProductoNegocioService.xsd_1.xsd"/>
 </catalog>

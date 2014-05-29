@@ -58,5 +58,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/ws/negocio"/>
         <delete dir="${build.generated.dir}/jax-wsCache/UsuarioNegocioService"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ManejoSesionService, wsimport-client-UsuarioNegocioService"/>
+    <target name="wsimport-client-ProductoNegocioService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ProductoNegocioService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ProductoNegocioService" destdir="${build.generated.dir}/jax-wsCache/ProductoNegocioService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ProductoNegocioService/wsdl/localhost_8080/WamazonServer/ProductoNegocioService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WamazonServer/ProductoNegocioService?wsdl" xnocompile="true" xendorsed="true" package="ws.productoNegocio">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ProductoNegocioService/wsdl/localhost_8080/WamazonServer/ProductoNegocioService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ProductoNegocioService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ProductoNegocioService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ProductoNegocioService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws/productoNegocio"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ProductoNegocioService"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ManejoSesionService, wsimport-client-UsuarioNegocioService, wsimport-client-ProductoNegocioService"/>
 </project>
