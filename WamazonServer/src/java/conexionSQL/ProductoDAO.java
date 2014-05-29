@@ -60,7 +60,7 @@ public class ProductoDAO
     {
        List <Producto> productos = new ArrayList<Producto>(); 
        Producto p = new Producto();
-       consulta = "SELECT  P.id_producto, C.nb_categoria,P.nb_producto, P.nu_precio,P.nu_existencia,P.dx_descripcion WHERE nb_categoria LIKE ?%";
+       consulta = "SELECT  P.id_producto, C.nb_categoria,P.nb_producto, P.nu_precio,P.nu_existencia,P.dx_descripcion FROM tbl03_producto P JOIN tbl01_categoria C ON P.id_categoria = C.id_categoria  WHERE C.nb_categoria LIKE ?%";
         try
         {
             con = Conexion.getConexion();
