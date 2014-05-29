@@ -45,11 +45,11 @@ public class UsuarioDAO
     /*
     * Metodo para agregar un usuario a la base de datos. 
     * Recibe un objeto usuario.
-    * Retorna true en caso de éxito o false en caso contrario.
+    * Retorna 0 en caso de que el usuario ya exista, 1 en caso de exito y -1 en caso de error.
     */
-    public static boolean registraUsuario(Usuario objUsuario)
+    public static int registraUsuario(Usuario objUsuario)
     {
-        boolean respuesta = false;
+        int respuesta = -1;
      
         //Validamos que el usuario no exista
         if(buscarUsuario(objUsuario.getUsuario()) == null)
@@ -71,11 +71,13 @@ public class UsuarioDAO
 
                 pst.close();
 
-                respuesta = true;
+                respuesta = 1;
             }
             catch(SQLException e){ System.out.println("Error al registrar al usuario D:\n" + e); }
             finally { if(con != null) Conexion.closeConexion(); }
         }
+        else
+            respuesta = 0;
         return respuesta;
     }
     

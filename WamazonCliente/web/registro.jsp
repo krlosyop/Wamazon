@@ -11,10 +11,11 @@
     <body>
         <div id="loginpanelwrap">
             <div class="loginheader">
-                <div class="logintitle">Wamazon Registro</div>
+                <a href="index.jsp"><img src="images/logo.fw.png" alt="Wamazon" id="logo" /></a>
+                <div class="logintitle">Registro</div>
             </div>
             <div class="loginform">
-                <form action="<%=request.getContextPath()%>/ManejoSesion?q=1" method="post">
+                <form action="<%=request.getContextPath()%>/UsuarioNegocio?q=1" method="post">
                     <%
                     if(session.getAttribute("error") != null)
                     {%>

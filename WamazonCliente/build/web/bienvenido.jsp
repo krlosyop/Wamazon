@@ -45,7 +45,7 @@
                 <div class="title"><a href="#">Compra productos</a></div>
 
                 <div 
-                    class="header_right">Welcome <%=usuario%> <a href="#" class="settings">Settings</a> <a href="<%=request.getContextPath()%>/ManejoSesion?q=2" class="logout">Logout</a>
+                    class="header_right"><img src="images/logo.fw.png" alt="Wamazon" id="welcome" />elcome <%=usuario%> <a href="#" class="settings">Settings</a> <a href="<%=request.getContextPath()%>/ManejoSesion?q=2" class="logout">Logout</a>
                 </div>
 
                 <div class="menu">

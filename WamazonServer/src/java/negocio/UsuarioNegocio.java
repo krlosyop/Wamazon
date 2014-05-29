@@ -12,16 +12,9 @@ public class UsuarioNegocio
      * Recibe un objeto usuario.
      * Retorna true en caso de éxito o false en caso contrario.
     */
-    public boolean registraUsuario(Usuario objUsuario)
+    public int registraUsuario(Usuario objUsuario)
     {
-        boolean respuesta;
-        
-        objUsuario = new Usuario();
-        objUsuario.setUsuario("carlos");
-        objUsuario.setPassword("1234");
-        objUsuario.setNombre("Carlos Adrian");
-        objUsuario.setApellidoPaterno("Jimenez");
-        objUsuario.setApellidoMaterno("Lopez");
+        int respuesta;
         
         //Se hace la consulta a la BD
         respuesta = UsuarioDAO.registraUsuario(objUsuario);

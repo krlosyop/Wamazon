@@ -10,7 +10,8 @@
     <body>
         <div id="loginpanelwrap">
             <div class="loginheader">
-                <div class="logintitle">Wamazon</div>
+                <a href="index.jsp"><img src="images/logo.fw.png" alt="Wamazon" id="logo" /></a>
+                <div class="logintitle">Login</div>
             </div>
             <div class="loginform">
                 <form action="<%=request.getContextPath()%>/ManejoSesion?q=1" method="post">

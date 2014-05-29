@@ -6,19 +6,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.ws.WebServiceRef;
+import ws.negocio.Usuario;
+import ws.negocio.UsuarioNegocioService;
 
 public class UsuarioNegocio extends HttpServlet 
 {
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/WamazonServer/UsuarioNegocioService.wsdl")
+    private UsuarioNegocioService service;
+    
     //Variable de sesion
-    HttpSession session;
+    private HttpSession session;
     
     //Variable para saber que operacion llamar
-    int q;
+    private int q;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
         response.setContentType("text/html;charset=UTF-8");
+        
+        //Obtenemos el puerto del service
+        ws.negocio.UsuarioNegocio usuarioNegocioService = service.getUsuarioNegocioPort();
+        
         //Obtenemos la sesion
         session = request.getSession();
         
@@ -28,11 +38,21 @@ public class UsuarioNegocio extends HttpServlet
         switch(q)
         {
             case 1: //Registrar
-                //int registro = getRegistro(request);
-                /*if(registro == 1)  //Registro correcto
-                    response.sendRedirect("bienvenidoAdministrador.jsp");
-                else //Registro erroneo
-                    response.sendRedirect("bienvenido.jsp");*/
+                int registro = getRegistro(request, usuarioNegocioService);
+                //Si hubo error en el registro
+                if (registro == -1)
+                    session.setAttribute("error", "Error al agregar a la base de datos");
+                //Si el usuario ya existe
+                else if (registro == 0)
+                    session.setAttribute("error", "Error el usuario ya está registrado");
+                //Regitro exitoso
+                else if (registro == 1)
+                    session.setAttribute("error", "El usuario se registró correctamente");
+                //Error desconocido D:
+                else                
+                    session.setAttribute("error", "Ocurrio un error desconocido D:");
+                
+                response.sendRedirect("registro.jsp");
                 break;
             case 2:
                 break;
@@ -41,26 +61,27 @@ public class UsuarioNegocio extends HttpServlet
         }
     }
     
-    private int getRegistro(HttpServletRequest request, sesion.ManejoSesion manejoSesion)
+    private int getRegistro(HttpServletRequest request, ws.negocio.UsuarioNegocio usuarioNegocioService)
     {
         int respuesta;
+        
+        //Recuperamos los campos
         String user = request.getParameter("TBUsuario");
         String pwd = request.getParameter("TBPassword");
-        String confirmarPwd = request.getParameter("TBConfirmarPassword");
         String nombre = request.getParameter("TBNombre");
         String apellidoPaterno = request.getParameter("TBApellidoPaterno");
         String apellidoMaterno = request.getParameter("TBApellidoMaterno");
         
-        //Llamamos el webService
-        respuesta = manejoSesion.getLogin(user, pwd);
+        //Creamos el objeto usuario
+        Usuario objUsuario = new Usuario();
+        objUsuario.setUsuario(user);
+        objUsuario.setPassword(pwd);
+        objUsuario.setNombre(nombre);
+        objUsuario.setApellidoPaterno(apellidoPaterno);
+        objUsuario.setApellidoMaterno(apellidoMaterno);
         
-        //Si el login fue correcto
-        if(respuesta != -1)
-        {
-            //Subimos a sesion el resultado y el nombre de usuario
-            session.setAttribute("rol", respuesta);
-            session.setAttribute("nombreUsuario", user);
-        }
+        //Llamamos el webService
+        respuesta = usuarioNegocioService.registraUsuario(objUsuario);
         
         return respuesta;
     }

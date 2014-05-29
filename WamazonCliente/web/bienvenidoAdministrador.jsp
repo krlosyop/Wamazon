@@ -44,7 +44,7 @@
             <div class="header">
                 <div class="title"><a href="bienvenidoAdministrador.jsp">Wamazon Administrador</a></div>
 
-                <div class="header_right">Bienvenido <%=usuario%> <a href="#" class="settings">Settings</a> <a href = "<%=request.getContextPath()%>/ManejoSesion?q=2" class="logout">Logout</a> </div>
+                <div class="header_right"><img src="images/logo.fw.png" alt="Wamazon" id="welcome" />elcome <%=usuario%> <a href="#" class="settings">Settings</a> <a href = "<%=request.getContextPath()%>/ManejoSesion?q=2" class="logout">Logout</a> </div>
 
                 <div class="menu">
                     <ul>

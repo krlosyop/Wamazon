@@ -214,3 +214,16 @@ input.loginform_submit{float:right; margin:0px 5px 0 0px;color:#fff;background: 
     clear:both;
     padding:7px 12px 5px 12px
 }
+
+#logo {
+    float: left;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+#welcome {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}

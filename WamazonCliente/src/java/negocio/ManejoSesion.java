@@ -15,10 +15,10 @@ public class ManejoSesion extends HttpServlet
     private ManejoSesionService service;
     
     //Variable de sesion
-    HttpSession session;
+    private HttpSession session;
     
     //Variable para saber que operacion llamar
-    int q;
+    private int q;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
@@ -26,7 +26,7 @@ public class ManejoSesion extends HttpServlet
         response.setContentType("text/html;charset=UTF-8");
         
         //Obtenemos el puerto del service
-        sesion.ManejoSesion manejoSesion = service.getManejoSesionPort();
+        sesion.ManejoSesion manejoSesionService = service.getManejoSesionPort();
         
         //Obtenemos la sesion
         session = request.getSession();
@@ -37,8 +37,8 @@ public class ManejoSesion extends HttpServlet
         switch(q)
         {
             case 1: //Iniciar Sesion
-                int login = getLogin(request, manejoSesion);
-                if(login == 1)  //Es administrador                    
+                int login = getLogin(request, manejoSesionService);
+                if(login == 1)  //Es administrador
                     response.sendRedirect("bienvenidoAdministrador.jsp");
                 else if(login == 0)  //Es usuario
                     response.sendRedirect("bienvenido.jsp");
@@ -58,19 +58,21 @@ public class ManejoSesion extends HttpServlet
         }
     }
     
-    private int getLogin(HttpServletRequest request, sesion.ManejoSesion manejoSesion)
+    private int getLogin(HttpServletRequest request, sesion.ManejoSesion manejoSesionService)
     {
         int respuesta;
+        
+        //Recuperamos los campos
         String user = request.getParameter("TBUsuario");
         String pwd = request.getParameter("TBPassword");
         
         //Llamamos el webService
-        respuesta = manejoSesion.getLogin(user, pwd);
+        respuesta = manejoSesionService.getLogin(user, pwd);
         
         //Si el login fue correcto
         if(respuesta != -1)
         {
-            //Subimos a sesion el resultado y el nombre de usuario
+            //Subimos a sesion el rol y el nombre de usuario
             session.setAttribute("rol", respuesta);
             session.setAttribute("nombreUsuario", user);
         }
