@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Larissa/Documents/GitHub/Wamazon/WamazonServer/src/java/conexionSQL/UsuarioDAO.java</file>
+            <file>file:/C:/Users/Larissa/Documents/GitHub/Wamazon/WamazonServer/src/java/pojo/Compra.java</file>
+            <file>file:/C:/Users/Larissa/Documents/GitHub/Wamazon/WamazonServer/src/java/negocio/ProductoNegocio.java</file>
+            <file>file:/C:/Users/Larissa/Documents/GitHub/Wamazon/WamazonServer/src/java/conexionSQL/CategoriaDAO.java</file>
+            <file>file:/C:/Users/Larissa/Documents/GitHub/Wamazon/WamazonServer/src/java/pojo/Categoria.java</file>
+            <file>file:/C:/Users/Larissa/Documents/GitHub/Wamazon/WamazonServer/src/java/conexionSQL/ProductoDAO.java</file>
+            <file>file:/C:/Users/Larissa/Documents/GitHub/Wamazon/WamazonServer/src/java/pojo/Usuario.java</file>
+        </group>
     </open-files>
 </project-private>
