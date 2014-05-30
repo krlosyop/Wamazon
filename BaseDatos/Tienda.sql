@@ -17,4 +17,3 @@ ALTER TABLE tbl06_producto_compra ADD INDEX FKtbl06_prod758312 (id_producto, id_
 ALTER TABLE tbl06_producto_compra ADD INDEX FKtbl06_prod179180 (id_compra), ADD CONSTRAINT FKtbl06_prod179180 FOREIGN KEY (id_compra) REFERENCES tbl05_compra (id_compra);
 ALTER TABLE tbl05_compra ADD INDEX FKtbl05_comp240987 (id_usuario), ADD CONSTRAINT FKtbl05_comp240987 FOREIGN KEY (id_usuario) REFERENCES tbl07_usuario (id_usuario);
 ALTER TABLE tbl08_direccion ADD INDEX FKtbl08_dire695188 (id_usuario), ADD CONSTRAINT FKtbl08_dire695188 FOREIGN KEY (id_usuario) REFERENCES tbl07_usuario (id_usuario);
-
