@@ -3,19 +3,21 @@ package pojo;
 public class Producto 
 {
     private int idProducto;
-    private String categoria;
+    private Categoria categoria;
     private String nombre;
     private double precio;
     private int existencia;
     private String descripcion;
+    private Imagen imagen;
     
     public Producto(){
         idProducto = 0;
-        categoria = "";
+        categoria = new Categoria();
         nombre = "";
         precio = 0;
         existencia = 0;
         descripcion = "";
+        imagen = new Imagen();
     }
     public Producto(int idProducto){
         
@@ -30,11 +32,11 @@ public class Producto
         this.idProducto = idProducto;
     }
 
-    public String getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
@@ -68,5 +70,13 @@ public class Producto
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    
+    public Imagen getImagen() {
+        return imagen;
+    }
+    
+    public void setImagen(Imagen imagen) {
+        this.imagen = imagen;
     }
 }

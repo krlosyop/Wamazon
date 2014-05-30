@@ -58,7 +58,7 @@ public class CategoriaDAO
             while (rs.next()) 
             {
                 c.setIdCategoria(rs.getInt("id_categoria"));
-                c.setCategoria(rs.getString("nb_categoria"));
+                c.setNombreCategoria(rs.getString("nb_categoria"));
                 cat.add(c);
             }
 
@@ -68,5 +68,39 @@ public class CategoriaDAO
         finally { if(con != null) Conexion.closeConexion(); }
         
         return cat;
+    }
+    
+    /*
+     * Método para buscar las categorias existentes
+     * No recibe nada.
+     * Regresa un array lleno de objetos categoria
+     */
+
+    public static List<Categoria> getCategorias() 
+    {
+        List<Categoria> categorias = new ArrayList<Categoria>();
+        Categoria categoria;
+        
+        consulta = "SELECT id_categoria, nb_categoria FROM tbl01_categoria";
+        try 
+        {
+            con = Conexion.getConexion();
+            pst = con.prepareStatement(consulta);
+            rs = pst.executeQuery();
+            while (rs.next()) 
+            {
+                categoria = new Categoria();
+                categoria.setIdCategoria(rs.getInt("id_categoria"));
+                categoria.setNombreCategoria(rs.getString("nb_categoria"));
+                
+                categorias.add(categoria);
+            }
+
+            pst.close();
+        } 
+        catch(SQLException e){ System.out.println("Error al buscar las categorias D:\n" + e); }
+        finally { if(con != null) Conexion.closeConexion(); }
+        
+        return categorias;
     }
 }

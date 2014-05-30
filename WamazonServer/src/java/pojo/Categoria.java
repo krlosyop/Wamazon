@@ -4,13 +4,19 @@ public class Categoria
 {
    private int idCategoria;
    private int idPadre;
-   private String categoria;
+   private String nombreCategoria;
 
     public Categoria() 
     {
         this.idCategoria = 0;
         this.idPadre = 0;
-        this.categoria = "";
+        this.nombreCategoria = "";
+    }
+    
+    public Categoria(int idCategoria, String nombreCategoria)
+    {
+        this.idCategoria = idCategoria;
+        this.nombreCategoria = nombreCategoria;
     }
 
     public int getIdCategoria() {
@@ -29,11 +35,11 @@ public class Categoria
         this.idPadre = idPadre;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public String getNombreCategoria() {
+        return nombreCategoria;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
     }
 }
