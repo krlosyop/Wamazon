@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/WamazonServer/ManejoSesionService?wsdl" uri="src/conf/xml-resources/web-service-references/ManejoSesionService/wsdl/localhost_8080/WamazonServer/ManejoSesionService.wsdl"/>
-    <system systemId="http://localhost:8080/WamazonServer/ManejoSesionService?xsd=1" uri="src/conf/xml-resources/web-service-references/ManejoSesionService/wsdl/localhost_8080/WamazonServer/ManejoSesionService.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/WamazonServer/UsuarioNegocioService?wsdl" uri="src/conf/xml-resources/web-service-references/UsuarioNegocioService/wsdl/localhost_8080/WamazonServer/UsuarioNegocioService.wsdl"/>
-    <system systemId="http://localhost:8080/WamazonServer/UsuarioNegocioService?xsd=1" uri="src/conf/xml-resources/web-service-references/UsuarioNegocioService/wsdl/localhost_8080/WamazonServer/UsuarioNegocioService.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/WamazonServer/ProductoNegocioService?wsdl" uri="src/conf/xml-resources/web-service-references/ProductoNegocioService/wsdl/localhost_8080/WamazonServer/ProductoNegocioService.wsdl"/>
-    <system systemId="http://localhost:8080/WamazonServer/ProductoNegocioService?xsd=1" uri="src/conf/xml-resources/web-service-references/ProductoNegocioService/wsdl/localhost_8080/WamazonServer/ProductoNegocioService.xsd_1.xsd"/>
-</catalog>
