@@ -1,22 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package pojo;
 
-/**
- *
- * @author Larissa
- */
-public class Categoria {
-
+public class Categoria 
+{
    private int idCategoria;
    private int idPadre;
    private String categoria;
 
-    public Categoria() {
+    public Categoria() 
+    {
         this.idCategoria = 0;
         this.idPadre = 0;
         this.categoria = "";
@@ -45,7 +36,4 @@ public class Categoria {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
-   
-    
-    
 }
